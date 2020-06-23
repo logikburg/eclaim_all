@@ -1,0 +1,86 @@
+CREATE TABLE "V_STAFF_GROUP" (
+	"STAFF_GRP_CODE" VARCHAR2(5 BYTE), 
+	"STAFF_GRP_NAME" VARCHAR2(20 BYTE))
+   
+Insert into V_STAFF_GROUP (STAFF_GRP_CODE,STAFF_GRP_NAME) values ('NU','Nursing');
+Insert into V_STAFF_GROUP (STAFF_GRP_CODE,STAFF_GRP_NAME) values ('ME','Medical');
+
+select * from V_STAFF_GROUP
+
+CREATE TABLE "V_JOB_RANK" 
+(
+	"JOB_RANK_CODE" VARCHAR2(20 BYTE), 
+	"JOB_RANK_NAME" VARCHAR2(50 BYTE), 
+	"STAFF_GROUP" VARCHAR2(20 BYTE)
+);
+   
+Insert into V_JOB_RANK (JOB_RANK_CODE,JOB_RANK_NAME,STAFF_GROUP) values ('AC','AC','ME');
+Insert into V_JOB_RANK (JOB_RANK_CODE,JOB_RANK_NAME,STAFF_GROUP) values ('EN','EN','NU');
+Insert into V_JOB_RANK (JOB_RANK_CODE,JOB_RANK_NAME,STAFF_GROUP) values ('RN','RN','NU');
+
+select * from "V_JOB_RANK"
+
+
+Select * from XXEC_PROJECT 
+
+select staff_grp_code, staff_grp_name from staff_group
+
+alter table XXEC_PROJECT 
+add USE_OTA_FLAG varchar2(100)
+
+alter table XXEC_PROJECT 
+add Q_DELIVERABLES varchar2(100)
+
+Select * from XXEC_PROJECT_JOB
+
+alter table XXEC_PROJECT_JOB 
+add UPDATED_ROLE_ID varchar2(100)
+
+alter table XXEC_PROJECT_JOB 
+add REC_STATE varchar2(100)
+
+alter table XXEC_PROJECT_JOB 
+add UPDATED_DATE TIMESTAMP
+
+alter table XXEC_PROJECT_JOB 
+add UPDATED_BY varchar2(100)
+
+alter table XXEC_PROJECT_JOB 
+add CREATED_ROLE_ID varchar2(100)
+
+alter table XXEC_PROJECT_JOB 
+add CREATED_DATE TIMESTAMP
+
+alter table XXEC_PROJECT_JOB 
+add CREATED_BY varchar2(100)
+
+Select * from XXEC_PROJECT
+
+update XXEC_PROJECT
+set department_id = 1
+where project_id = 24
+
+
+
+create or replace view V_PAYMENT_JOB_HOURS as ( 
+select payBatch.project_id, payBatch.project_ver_id, payJob.batch_id, payJob.batch_job_id,rank, work_hour, payJob.prj_job_group_id, 
+(select LISTAGG(rank, ', ') WITHIN GROUP (ORDER BY rank) from xxeal_payment_job 
+where prj_job_group_id = payJob.prj_job_group_id and batch_id = payJob.batch_id group by prj_job_group_id,batch_id) as ranks, 
+(select total_hour from xxeal_project_job where job_group_id = payJob.prj_job_group_id) APPR_HOUR, 
+sum(work_hour) over(partition by payJob.prj_job_group_id) used_hour, 
+sum(work_hour) over(partition by payJob.batch_id, payJob.prj_job_group_id) batch_hour 
+from xxeal_payment_job payJob, 
+xxeal_payment_batch payBatch, 
+xxeal_payment_detail payD 
+where payBatch.batch_id = payJob.batch_id and payD.status = 'T' 
+and payD.batch_id = payJob.batch_id and payJob.batch_job_id = payD.batch_job_id); 
+
+alter table xxeal_payment_detail
+ADD batch_job_id NUMBER
+
+
+alter table xxeal_payment_job
+ADD PRJ_JOB_GROUP_ID NUMBER
+
+alter table xxeal_payment_batch
+ADD PROJECT_VER_ID NUMBER
