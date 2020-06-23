@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report06_sub" pageWidth="802" pageHeight="555" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="00824b65-4c31-468b-aa3c-777e873baa5c">
+	<property name="ireport.zoom" value="4.177248169415781"/>
+	<property name="ireport.x" value="488"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="8207bd1c-f254-40ab-ac13-bc660ca171fd"/>
+	<subDataset name="New Dataset 1" uuid="300f5cd1-3d3f-4107-b760-48552464149a"/>
+	<field name="postEndDate" class="java.util.Date"/>
+	<field name="postId" class="java.lang.String"/>
+	<field name="employeeName" class="java.lang.String"/>
+	<field name="rank" class="java.lang.String"/>
+	<field name="employmentCategory" class="java.lang.String"/>
+	<field name="employeeId" class="java.lang.String"/>
+	<field name="postStatusDesc" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="37">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="171" y="1" width="70" height="35" backcolor="#8DC94E" uuid="1f2f3f28-28c1-4884-a24f-ebf479aacbb1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Post Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="557" y="1" width="106" height="36" backcolor="#8DC94E" uuid="b775cb4c-de74-424b-ac96-0117fd270b8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Generic Rank]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="242" y="1" width="79" height="36" backcolor="#8DC94E" uuid="f3d5846c-be43-4d24-996f-298b634417fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Post End Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="401" y="1" width="155" height="36" backcolor="#8DC94E" uuid="b2da08bf-b992-412e-8fba-6f2cd90e9306"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Employee Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="1" y="1" width="170" height="36" forecolor="#000000" backcolor="#8DC94E" uuid="15c1d38e-4b84-4c7e-b09b-4c5282ef36ba"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Post ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="664" y="1" width="135" height="36" backcolor="#8DC94E" uuid="697aad3d-1b99-4852-9fef-7e01d2bae9fc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Employment Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" mode="Opaque" x="322" y="1" width="79" height="36" forecolor="#000000" backcolor="#8DC94E" uuid="750a121e-10dd-467e-8a09-19cef7f84f92"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Employee ID]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="1" height="37" uuid="90fe4c18-f800-42aa-9c68-4a076cb12bf6"/>
+			</line>
+			<line>
+				<reportElement x="170" y="0" width="1" height="37" uuid="dc62388d-5fcb-4555-8dcc-eedfb458a363"/>
+			</line>
+			<line>
+				<reportElement x="556" y="0" width="1" height="37" uuid="416f3733-7fa0-4362-a335-6d924bd9bcfd"/>
+			</line>
+			<line>
+				<reportElement x="798" y="0" width="1" height="37" uuid="0410f460-3ccd-4d6e-af2d-e73a3c05de5b"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="798" height="1" uuid="134906b5-38b9-489a-8aa6-9df36d77ae8a"/>
+			</line>
+			<line>
+				<reportElement x="321" y="0" width="1" height="37" uuid="2d5a1ee5-870b-4c52-b71c-e8c723442506"/>
+			</line>
+			<line>
+				<reportElement x="663" y="0" width="1" height="37" uuid="ad755777-95af-45d3-ad5a-d4a09c5044fb"/>
+			</line>
+			<line>
+				<reportElement x="400" y="0" width="1" height="37" uuid="3a377817-d8e1-45ca-b250-0225abca74a7"/>
+			</line>
+			<line>
+				<reportElement x="0" y="36" width="798" height="1" uuid="c5fc6109-cb3f-454a-8e2d-b4ab6e50a874"/>
+			</line>
+			<line>
+				<reportElement x="241" y="0" width="1" height="37" uuid="5ae9c183-65d0-4a57-9b20-151724d6ef22"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Prevent">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="242" y="0" width="79" height="18" uuid="3ea88cd9-591e-4399-8600-a6269ab8c786"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{postEndDate}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="0" width="170" height="18" uuid="6237f3da-c588-4506-a348-f18d85998383"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{postId}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="405" y="0" width="145" height="18" uuid="05090783-4d47-4597-889f-d7e561a4cb0b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employeeName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="557" y="0" width="106" height="18" uuid="86dbea99-9a86-4fd8-9d8b-4e205356989b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rank}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="664" y="0" width="135" height="18" uuid="8bb53620-df0f-4e1f-ab87-728861301292"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employmentCategory}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" mode="Transparent" x="322" y="0" width="79" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="787f7dca-a195-4ecd-9f13-39da790af10d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employeeId}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="170" y="0" width="1" height="20" uuid="b827b42a-7909-4f35-89de-b8d0faeeff4e"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="556" y="0" width="1" height="20" uuid="3ed201a9-71f3-4ac8-8185-e2b323118185"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="798" y="0" width="1" height="20" uuid="1369e541-278e-4dff-b1e0-eb918a3e7989"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="21" uuid="5a39d5e6-2070-41c1-9f94-7909fd8978d1"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="321" y="0" width="1" height="20" uuid="fa0bbfa7-604c-43d5-99c2-c8304a7c345b"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="663" y="0" width="1" height="20" uuid="46bd0d17-7331-49b9-a1bf-5ea3d7939d98"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="400" y="0" width="1" height="20" uuid="342a66ca-9646-4366-8345-72b25605bf85"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="0" y="20" width="798" height="1" uuid="b70a557b-42e5-4851-8e9d-fed983f28f27"/>
+			</line>
+			<line>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="241" y="0" width="1" height="20" uuid="87abc5f6-6ed0-40ab-9dc8-19378b0ddb52"/>
+			</line>
+			<textField>
+				<reportElement x="171" y="0" width="70" height="18" uuid="0c0e0f69-7581-4141-9019-17f23b91627e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{postStatusDesc}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

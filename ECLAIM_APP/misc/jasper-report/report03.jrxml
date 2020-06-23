@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report03" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00824b65-4c31-468b-aa3c-777e873baa5c">
+	<property name="ireport.zoom" value="2.1435888100000575"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="806"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="8207bd1c-f254-40ab-ac13-bc660ca171fd"/>
+	<subDataset name="New Dataset 1" uuid="300f5cd1-3d3f-4107-b760-48552464149a"/>
+	<parameter name="searchDateAsAt" class="java.lang.String"/>
+	<parameter name="DATA" class="net.sf.jasperreports.engine.JRDataSource" isForPrompting="false"/>
+	<parameter name="DATA2" class="net.sf.jasperreports.engine.JRDataSource" isForPrompting="false"/>
+	<parameter name="bolHaveData" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="bolHaveData2" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\appl\\mpr\\d1a\\project_files\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="searchStaffGroup" class="java.lang.String"/>
+	<parameter name="searchRankName" class="java.lang.String"/>
+	<parameter name="searchClusterName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="145" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="1" y="1" width="643" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="dfa3c4c1-578d-4f8e-b331-fa6321b26116"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["HOSPITAL AUTHORITY"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="21" width="643" height="20" uuid="92078acf-e732-485f-bf9c-6cbbea29c9cd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MANPOWER POSITION REGISTRY SYSTEM - ESV Details"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="659" y="1" width="41" height="20" uuid="dcdbd09c-85bc-4dfe-8477-45376a9cb5b3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="659" y="21" width="41" height="20" uuid="4de04e18-9937-432b-90c0-a54d873a3896"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Time:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="659" y="41" width="41" height="20" uuid="c364f36e-4dd2-434b-939a-afc5c1eaa24e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page:"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Page">
+				<reportElement x="700" y="41" width="100" height="20" uuid="94a616e3-d910-423c-b536-a3166f735e6f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="700" y="1" width="100" height="20" uuid="5801826a-06bd-4d66-b680-6357ed4f4b03"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="700" y="21" width="100" height="20" uuid="cfbb4de3-113f-4733-b794-1a3aeb380e67"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="80" y="82" width="463" height="20" uuid="dc589dd9-0d0c-41cb-86b1-4e3e3caaa30f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchDateAsAt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="62" width="155" height="20" uuid="62042cc9-cd46-4d15-ae02-839edea376a9"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report criteria:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="82" width="77" height="20" uuid="d154786d-88f8-4cea-82a1-fa2cc2d5c82b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date As At:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="80" y="102" width="718" height="20" uuid="f8631295-9e66-4b07-b17a-9be83388ceb9"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchClusterName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="102" width="77" height="20" uuid="6fd623e0-db15-4e1a-9bbd-a769cecbae72"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cluster:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="122" width="77" height="20" uuid="bea64337-7027-4303-8c85-6f5c5473d61f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Staff Group:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="80" y="122" width="718" height="20" uuid="d5773a7e-fce7-4aed-89fa-ed25b913bc19"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchStaffGroup}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="124" splitType="Immediate">
+			<printWhenExpression><![CDATA[$P{bolHaveData} > 0]]></printWhenExpression>
+			<subreport>
+				<reportElement x="1" y="2" width="797" height="100" uuid="d27dace9-b437-47e2-afe8-d73528a27e7c"/>
+				<subreportParameter name="searchDateAsAt"/>
+				<dataSourceExpression><![CDATA[$P{DATA}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report03_sub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="108">
+			<printWhenExpression><![CDATA[$P{bolHaveData2} > 0]]></printWhenExpression>
+			<subreport>
+				<reportElement x="1" y="2" width="796" height="100" uuid="e5d71d61-baa2-4dca-80bf-080e319c10f7"/>
+				<subreportParameter name="searchDateAsAt"/>
+				<dataSourceExpression><![CDATA[$P{DATA2}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report_held_against.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28"/>
+	</pageFooter>
+	<noData>
+		<band height="203">
+			<textField>
+				<reportElement x="660" y="49" width="41" height="20" uuid="3311c750-b02a-4d8b-9f75-9bab834fb8bc"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="70" width="155" height="20" uuid="b331b720-0c74-48a8-98d4-322dc40bebea"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report criteria:"]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="701" y="29" width="100" height="20" uuid="7a24bdf8-56e9-4e81-b211-ab86ba804c81"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="29" width="41" height="20" uuid="9702e700-a99c-446c-a1f3-5a54fd6beee9"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Time:"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="701" y="9" width="100" height="20" uuid="1788b749-ab5c-4369-91a4-3316f2db6da6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="660" y="9" width="41" height="20" uuid="72968fa8-c6e2-4720-9839-8b02f5eb3522"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date:"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Page">
+				<reportElement x="701" y="49" width="100" height="20" uuid="b52ecac3-cf47-4004-ba0a-e48a457fc7e5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="90" width="77" height="20" uuid="556df04e-1ee7-4ada-bb21-6ee381b7b173"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date As At:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="81" y="90" width="463" height="20" uuid="466bf51e-d5e6-437b-8465-34db64cf5bf4"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchDateAsAt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="29" width="643" height="20" uuid="24b8a4be-8e55-4d7b-90e0-df1f46494678"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MANPOWER POSITION REGISTRY SYSTEM - ESV Details"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="2" y="9" width="643" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="7fb16dc8-7b05-454d-96ed-01e5b947545e"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["HOSPITAL AUTHORITY"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="167" width="793" height="20" uuid="8d88957c-41d1-4908-a124-b9a3fb6dec06"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No Data Found"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="81" y="130" width="718" height="20" uuid="ebedb567-e07d-4d41-8f21-210ed45120bd"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchStaffGroup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="130" width="77" height="20" uuid="d4eb70a2-9763-44b2-85ed-9a78214da8ca"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Staff Group:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="4" y="110" width="77" height="20" uuid="36fb02b7-9e03-43dd-8a3a-97aefd3f7e37"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cluster:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="81" y="110" width="718" height="20" uuid="04b7fd26-e16f-488f-947a-d3db68024a5d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchClusterName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</noData>
+</jasperReport>

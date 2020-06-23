@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report04" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="NoDataSection" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d54b2e62-95cf-4b83-8ad1-da51a375e3f0">
+	<property name="ireport.zoom" value="1.948717100000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\appl\\mpr\\d1a\\project_files\\report\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DATA" class="net.sf.jasperreports.engine.JRDataSource" isForPrompting="false"/>
+	<parameter name="DATA2" class="net.sf.jasperreports.engine.JRDataSource" isForPrompting="false"/>
+	<parameter name="searchDateAsAt" class="java.lang.String"/>
+	<parameter name="bolHaveData" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="bolHaveData2" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="searchRankName" class="java.lang.String"/>
+	<parameter name="searchStaffGroup" class="java.lang.String"/>
+	<parameter name="searchClusterName" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="160" splitType="Stretch">
+			<textField>
+				<reportElement x="654" y="6" width="41" height="20" uuid="2db080f1-825b-444e-92e4-d66549fbac3e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="26" width="628" height="20" uuid="7c35218a-30a5-4162-b634-7e8bd537dec0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MANPOWER POSITION REGISTRY SYSTEM - Review of Time-Limited Posts that are close to effective date"]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="695" y="26" width="100" height="20" uuid="ce1efa0e-6999-46fd-9270-fd3fc81989c3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="695" y="6" width="100" height="20" uuid="b635f044-140f-43d4-b853-6d05760f9aaf"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="654" y="26" width="41" height="20" uuid="e834c5bb-a26a-46b4-87b8-1a6f85f2f655"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Time:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="695" y="46" width="100" height="20" uuid="4b6ca89e-662d-45bf-acfe-9bf89e29b38b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="7" y="6" width="628" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="0695f013-bb0d-4d32-8058-533ac407be49"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["HOSPITAL AUTHORITY"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="654" y="46" width="41" height="20" uuid="e6a1a7f1-a885-4740-b071-1666299bbbdf"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="87" y="82" width="463" height="20" uuid="63e9ee13-fcc0-441e-b2f7-db789cb2c2e3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchDateAsAt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="82" width="77" height="20" uuid="b1e9024f-9539-4c6a-996b-a6012b128986"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date As At:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="62" width="155" height="20" uuid="716f4933-66e5-419f-832d-6dca1b140513"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report criteria:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="87" y="122" width="718" height="20" uuid="49fde070-93f5-43d7-a935-4a6ecd6c4939"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchStaffGroup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="122" width="77" height="20" uuid="b45bf4aa-8825-4d30-b910-423d4b032b0a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Staff Group:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="102" width="77" height="20" uuid="5c0f27b9-0cf8-47e0-8ecd-b7095780abfa"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cluster:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="87" y="102" width="718" height="20" uuid="5172a7fe-b48b-4a28-95b3-89b8440b8e7a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchClusterName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="135">
+			<printWhenExpression><![CDATA[$P{bolHaveData} > 0]]></printWhenExpression>
+			<subreport isUsingCache="true">
+				<reportElement x="2" y="28" width="799" height="100" uuid="fdabd61a-fd5b-48d5-919f-2e38de4989a9"/>
+				<dataSourceExpression><![CDATA[$P{DATA}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report04_sub.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="8" y="5" width="400" height="20" uuid="397a9fa1-d86a-4fdf-ae8e-974acef828c0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Time-Limited Posts that are close to effective date"]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="130">
+			<printWhenExpression><![CDATA[$P{bolHaveData2} > 0]]></printWhenExpression>
+			<subreport isUsingCache="true">
+				<reportElement x="2" y="24" width="799" height="100" uuid="8961bfe3-7aa1-4015-8021-153eedb5ff66"/>
+				<dataSourceExpression><![CDATA[$P{DATA2}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "report04_sub.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="7" y="2" width="400" height="20" uuid="da80fbb4-6175-494c-8191-7886098deb52"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Outstanding Time-Limited Posts"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="86"/>
+	</pageFooter>
+	<noData>
+		<band height="210">
+			<textField>
+				<reportElement x="8" y="66" width="155" height="20" uuid="fa9fed36-7482-4169-8657-78a52449b4c3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Report criteria:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="86" width="463" height="20" uuid="24232871-b8cd-4082-bafd-bf42736c71f1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchDateAsAt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="5" y="10" width="628" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="3381cf0f-bca9-4686-b6c4-a03080299ce3"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["HOSPITAL AUTHORITY"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="30" width="628" height="20" uuid="c65dfe62-d098-4bf8-bbf7-d0304bb21758"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["MANPOWER POSITION REGISTRY SYSTEM - Review of Time-Limited Posts that are close to effective date"]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm:ss">
+				<reportElement x="693" y="30" width="100" height="20" uuid="ad5d19f3-1376-441a-bcb1-92f5e0edf956"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="693" y="50" width="100" height="20" uuid="bf06ccf6-c86b-4ae4-9ced-0129f8152a5f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="86" width="77" height="20" uuid="60f10fc5-0fef-4bdd-88ad-38d2ee3f4654"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date As At:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="652" y="30" width="41" height="20" uuid="4b88d9ff-344a-461b-b096-d5238c60c301"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Time:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="652" y="10" width="41" height="20" uuid="b44fefc6-ae81-4355-938d-8df604c02b15"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date:"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="693" y="10" width="100" height="20" uuid="42e7bffe-14ca-4d05-a160-2b08784137c8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="652" y="50" width="41" height="20" uuid="fba062dc-ec52-4bf8-8dda-409ec57ea17d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page:"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="183" width="788" height="20" uuid="ac365890-934f-4006-acbf-54de177d5b3f"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["No Data Found"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="126" width="77" height="20" uuid="266efae0-f24d-42e8-801e-4eb4b86b5fd6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Staff Group:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="126" width="718" height="20" uuid="53bc9ec1-a87e-4064-aac6-ee8e4e26426a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchStaffGroup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="8" y="106" width="77" height="20" uuid="601d65bf-bde1-41ec-a5b8-72b9916be8a6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cluster:"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="85" y="106" width="718" height="20" uuid="871760e6-6964-4dd2-8bff-4d718279407b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{searchClusterName}]]></textFieldExpression>
+			</textField>
+		</band>
+	</noData>
+</jasperReport>

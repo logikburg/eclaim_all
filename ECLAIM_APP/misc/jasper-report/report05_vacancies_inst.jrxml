@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="example" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="00824b65-4c31-468b-aa3c-777e873baa5c">
+	<property name="ireport.zoom" value="1.3310000000000186"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="8207bd1c-f254-40ab-ac13-bc660ca171fd"/>
+	<subDataset name="New Dataset 1" uuid="300f5cd1-3d3f-4107-b760-48552464149a"/>
+	<parameter name="subDateAsAt" class="java.lang.String"/>
+	<field name="instCode" class="java.lang.String"/>
+	<field name="instName" class="java.lang.String"/>
+	<field name="staffGroupCode" class="java.lang.String"/>
+	<field name="staffGroupName" class="java.lang.String"/>
+	<field name="vacanciesFTE" class="java.lang.Double"/>
+	<field name="strengthFTE" class="java.lang.Double"/>
+	<field name="deficiency" class="java.lang.Double"/>
+	<variable name="strengthFTE_1" class="java.lang.Double" resetType="Group" resetGroup="group_by instCode" calculation="Sum">
+		<variableExpression><![CDATA[$F{strengthFTE}]]></variableExpression>
+	</variable>
+	<variable name="vacanciesFTE_1" class="java.lang.Double" resetType="Group" resetGroup="group_by instCode" calculation="Sum">
+		<variableExpression><![CDATA[$F{vacanciesFTE}]]></variableExpression>
+	</variable>
+	<variable name="deficiency_1" class="java.lang.Double" resetType="Group" resetGroup="group_by instCode" calculation="Sum">
+		<variableExpression><![CDATA[$F{deficiency}]]></variableExpression>
+	</variable>
+	<group name="group_by instCode" isReprintHeaderOnEachPage="true" keepTogether="true">
+		<groupExpression><![CDATA[$F{instCode}+$F{staffGroupCode}]]></groupExpression>
+		<groupHeader>
+			<band height="113">
+				<textField>
+					<reportElement x="5" y="75" width="38" height="20" uuid="318ec595-2242-4315-8bf4-37f22b0e65af"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Grade"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="127" y="51" width="100" height="18" uuid="e377105a-eee7-451c-ba93-5c5cdb7082d9"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Vacancies as "]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="127" y="69" width="20" height="18" uuid="ab6bbf87-b3c9-49b1-847d-c546f4f87091"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["at "]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd.MM.yy" isBlankWhenNull="true">
+					<reportElement x="147" y="69" width="80" height="18" uuid="c3e5fd39-eb6a-4af2-970d-f2d8909774b4"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{subDateAsAt}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="127" y="87" width="100" height="18" uuid="a211b7c7-41da-428b-9c93-d406c6ceb486"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["(excl Temp posts)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="258" y="87" width="100" height="18" uuid="758a6a9e-3c1d-4e19-bee5-a7d00569d076"/>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["(FTE)"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="258" y="69" width="20" height="18" uuid="5bf17f32-93f1-4bad-90f1-3196ffee469a"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["at "]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd.MM.yy" isBlankWhenNull="true">
+					<reportElement x="278" y="69" width="80" height="18" uuid="72664686-1721-4d39-b04c-b12ade40cf42"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{subDateAsAt}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="258" y="51" width="100" height="18" uuid="4ce48a87-b042-4965-811e-cfb6aafa28be"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CPT & TEMP Staff " + "as"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="388" y="86" width="99" height="18" uuid="8ea23345-0648-4179-af49-0cc2d42f52b5"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["the Temp Post"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="388" y="68" width="99" height="18" uuid="c09fce8b-636a-454a-a645-4bcdd99aef38"/>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Vacancies after Offset"]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="127" y="18" width="360" height="18" uuid="4d5181dd-69d5-4e22-ae7f-f851baa0d568"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{instName}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="2" y="18" width="512" height="1" uuid="134906b5-38b9-489a-8aa6-9df36d77ae8a"/>
+				</line>
+				<line>
+					<reportElement x="1" y="19" width="1" height="94" uuid="c027454a-9ac7-43ee-9f50-8833323369a8"/>
+				</line>
+				<line>
+					<reportElement x="3" y="112" width="510" height="1" uuid="c5fc6109-cb3f-454a-8e2d-b4ab6e50a874"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="513" y="18" width="1" height="95" uuid="7fc2a1ab-dbd7-41ae-8f81-9e6f9ceeabe0"/>
+				</line>
+				<line>
+					<reportElement x="372" y="46" width="1" height="65" uuid="d35ca729-1d07-492c-b9cb-2e3dadccff5f"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="241" y="45" width="1" height="65" uuid="6d2f91e7-0db9-417f-b530-5dff979dee84"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="110" y="18" width="1" height="93" uuid="938ade45-8bc3-4f34-a2c3-24a5b885120f"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="112" y="44" width="400" height="1" uuid="3a8c13ef-9615-4c8c-b74e-8f63d05b9ddb"/>
+					<graphicElement>
+						<pen lineWidth="1.5" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="35">
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement x="127" y="0" width="100" height="20" uuid="e5985f4d-fdad-486b-8b6b-783cf7694cfc"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{vacanciesFTE_1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="5" y="0" width="98" height="20" uuid="30e27317-ed9e-4715-91c0-d62b43b64966"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Total"]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement x="258" y="0" width="100" height="20" uuid="38cd08aa-087b-4c5b-93ea-4cdd6e3ba7c4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{strengthFTE_1}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="2" y="20" width="512" height="1" uuid="180b418c-d49d-425c-911e-d23207e4cec1"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="110" y="0" width="1" height="22" uuid="92168728-71aa-458a-ad0b-bc9364010d10"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="241" y="0" width="1" height="22" uuid="0e699436-164b-4abc-a806-874d7d06924b"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="372" y="0" width="1" height="22" uuid="bbfe6f80-64c0-42db-b24d-f30e4c30dcd8"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="513" y="0" width="1" height="22" uuid="600f7cba-8d4b-43e1-ab1d-f000b30c097b"/>
+				</line>
+				<line>
+					<reportElement x="1" y="0" width="1" height="22" uuid="0d3dd4f1-6351-491c-9386-adc62699d7b3"/>
+					<graphicElement>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</graphicElement>
+				</line>
+				<textField pattern="#,##0.00" isBlankWhenNull="true">
+					<reportElement mode="Transparent" x="388" y="0" width="100" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="94e75c5a-8285-408a-af68-2a0b68206882"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{deficiency_1}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="1" width="98" height="20" uuid="52fa56f2-cf38-43f5-b475-c6ba2d424a77"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{staffGroupName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="127" y="1" width="100" height="20" uuid="a2e977e7-b3e8-4e2b-9620-9250b4856ff2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{vacanciesFTE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="258" y="1" width="100" height="20" uuid="3f2eeabe-27fa-4af6-b7f5-76b311de5826"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{strengthFTE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement x="387" y="1" width="100" height="20" uuid="8cf9ebcc-3499-4177-b8a6-ef9f9a57366d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{deficiency}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="241" y="1" width="1" height="22" uuid="f991f3e9-a6e5-4d92-a4a8-b0f4761d792c"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="110" y="1" width="1" height="21" uuid="71429323-4c71-4939-af2f-a129f0f2fc88"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="1" height="25" uuid="d39578c4-9707-4044-9d40-ec0b81c726a6"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="4" y="23" width="510" height="1" uuid="c840433d-6428-41c7-88e8-d14a91001135"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="372" y="1" width="1" height="22" uuid="b35a4b7b-34af-4080-907b-1c6043fb23cb"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dotted"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="513" y="0" width="1" height="25" uuid="46bd0d17-7331-49b9-a1bf-5ea3d7939d98"/>
+			</line>
+		</band>
+	</detail>
+</jasperReport>
