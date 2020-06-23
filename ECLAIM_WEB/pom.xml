@@ -15,7 +15,7 @@
 		<org.springframework-version>4.3.13.RELEASE</org.springframework-version>
 		<org.springframework-ws-version>2.4.0.RELEASE</org.springframework-ws-version>
 		<org.springframework-security-version>4.2.3.RELEASE</org.springframework-security-version>
-		<jackson-version>2.9.3</jackson-version>
+		<jackson-version>2.11.0</jackson-version>
 		<jcl.slf4j-version>1.7.25</jcl.slf4j-version>
 		<jstl-version>1.2</jstl-version>
 		<mail-version>1.4.5</mail-version>
